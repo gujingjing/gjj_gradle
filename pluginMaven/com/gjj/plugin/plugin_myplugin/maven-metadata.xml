@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.gjj.plugin</groupId>
+  <artifactId>plugin_myplugin</artifactId>
+  <versioning>
+    <versions>
+      <version>1.0.1-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20181010091632</lastUpdated>
+  </versioning>
+</metadata>

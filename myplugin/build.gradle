@@ -1,0 +1,25 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    //gradle sdk
+    compile gradleApi()
+    //groovy sdk
+    compile localGroovy()
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+//定义上传任务
+uploadArchives {
+    repositories.mavenDeployer {
+        repository(url: uri(LOCAL_REPO_URL))
+        pom.groupId = PROJ_GROUP
+        pom.artifactId = PLUGIN_TEST1_ARTIFACTID
+        //pom.version = android.defaultConfig.versionName
+        pom.version = PLUGIN_TEST1_VERSION
+    }
+}

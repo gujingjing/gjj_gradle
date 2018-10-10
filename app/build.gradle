@@ -25,4 +25,37 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
 }
+
+
+//左移，表示在执行阶段运行代码
+task hellow <<{
+    println "hellow !"
+}
+
+//设置task中action的执行顺序
+task hellow1{
+
+    println "hellow1 !"
+
+    doLast{
+        println "doLast !"
+    }
+
+    doFirst{
+        println "doFirst !"
+    }
+}
+
+
+//task的依赖 mustRunAfter 和 dependsOn
+task task1 <<{
+    println "task1 "
+}
+task task2 <<{
+    println "task2"
+}
+
+//task1.mustRunAfter task2  //gradlew task2 task1
+task1.dependsOn task2  //gradlew task1
